@@ -2,8 +2,13 @@ const toggleBtn = document.getElementById("toggleBtn");
 const icon = document.getElementById("icon_mode");
 let logo = document.getElementById("logo");
 let icon2 = document.getElementById("sm_mode");
-let icon3 = document.getElementById("login-btn")
-let icon4 = document.getElementById("search-btn")
+let icon3 = document.getElementById("login-btn");
+let icon4 = document.getElementById("search-btn");
+let titel = document.getElementById("titel");
+let titel2 = document.getElementById("titels2");
+let titel3 = document.getElementById("titels3");
+let titel4 = document.getElementById("titels4");
+let searchh = document.getElementById("searchh");
 
 toggleBtn.addEventListener("click", function () {
   if (icon.classList.contains("fa-moon")) {
@@ -24,6 +29,11 @@ function darkTheme(icon, logo) {
   icon2.style.color = "white";
   icon3.style.color = "white";
   icon4.style.color = "white";
+  titel.style.color = "white";
+  titel2.style.color = "white";
+  titel3.style.color = "white";
+  titel4.style.color = "white";
+  searchh.style.color = "black";
 }
 
 function lightTheme(icon, logo) {
@@ -32,6 +42,10 @@ function lightTheme(icon, logo) {
   logo.src = "justinmind_afb/L_Logo.png";
   document.body.classList.remove("dark-mode");
   document.body.style.backgroundColor = "white";
+  titel.style.color = "black";
+  titel2.style.color = "black";
+  titel3.style.color = "black";
+  titel4.style.color = "black";
 }
 
 
