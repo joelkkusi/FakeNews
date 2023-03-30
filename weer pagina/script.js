@@ -22,7 +22,7 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity:" + humidity + "%";
         document.querySelector(".wind").innerText = "wind speed:" + speed + "Km/h";
         document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage = "url('http://source.unsplash.com/1920x1080/?" + name +"')";
+        document.querySelector('akdjan').style.backgroundImage = "url('http://source.unsplash.com/1920x1080/?" + name +"')";
 
     } ,
     search : function(){
