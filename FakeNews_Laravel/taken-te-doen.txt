@@ -1,0 +1,13 @@
+
+
+-posts in database maken en in de homepage laten zien. Zorg ervoor dat na de eerste vijf rows -
+	de posts in de meer posts sectie gaat staan.
+
+
+-in de nieuws tab moet je alle news zien van new naar oud met pagination.
+
+-maak een contacts pagina en een footer en in beide moet je contactinformatie zien.
+
+-zorg dat dark theme aan blijft met waarschijnlijk cookies.
+
+-zoekfunctie maken.
