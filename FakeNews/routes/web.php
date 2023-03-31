@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WeatherController;
@@ -18,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', fn() => redirect('/home'));
 Route::get('/home', [PostController::class, 'recent']);
-
-Route::resource('products', 'App\Http\Controllers\ImageController');
 
 Route::get('/nieuws', [PostController::class, 'all']);
 
