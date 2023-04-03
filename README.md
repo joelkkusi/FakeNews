@@ -13,6 +13,7 @@ you only need to do this once and for the next changes you can just do "git pull
     8. type php "artisan key:generate".
     9. type "php artisan migrate".
     10. lastly type "php artisan storage:link".
+    11. If storage:link command doesn't work, delete the storage folder found in the public folder (/public/storage/)
     11. run php artisan serve.
 
 note: After making a new user, if you change is_admin to 1, you get access to upload posts.
