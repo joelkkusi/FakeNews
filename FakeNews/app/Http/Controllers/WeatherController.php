@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class WeatherController extends Controller
 {
-    public function show() {
+    public function show()
+    {
         return view('weather.index');
     }
 }

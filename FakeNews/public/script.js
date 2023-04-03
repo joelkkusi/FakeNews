@@ -9,8 +9,22 @@ let container = document.getElementsByClassName("back-color");
 let inputField = document.getElementsByClassName("text-input");
 
 
+window.onload = function () {
+  const cookieTheme = document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+  cookieTheme == 'dark' ? darkTheme(icon, logo, text, container, inputField) : lightTheme(icon, logo, text, container, inputField);
+}
+
 
 toggleBtn.addEventListener("click", function () {
+
+  const body = document.querySelector('body');
+  const currentTheme = body.getAttribute('data-theme');
+  const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+  body.setAttribute('data-theme', nextTheme);
+  document.cookie = `theme=${nextTheme}`;
+
   if (icon.classList.contains("fa-moon")) {
     darkTheme(icon, logo, text, container, inputField);
   } else {
@@ -38,6 +52,8 @@ function darkTheme(icon, logo, text, container, inputField) {
     inputField[i].style.backgroundColor = "#111827";
     inputField[i].style.color = "white";
   }
+
+  setCookie('theme', 'dark');
 }
 
 function lightTheme(icon, logo, text, container, inputField) {
@@ -58,6 +74,16 @@ function lightTheme(icon, logo, text, container, inputField) {
     inputField[i].style.backgroundColor = "white";
     inputField[i].style.color = "black"
   }
+
+  setCookie('theme', 'light');
+}
+
+
+function setCookie(name, value) {
+  var d = new Date();
+  d.setTime(d.getTime() + (365*24*60*60*1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
 

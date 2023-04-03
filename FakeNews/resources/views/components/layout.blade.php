@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nieuws</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
-    <script src="script.js" defer></script>
+    <script src="/script.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <link rel="stylesheet" href="weather.css">
     <script src="weather.js" defer></script>
@@ -29,9 +30,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
-<nav class="border-8" id="nav" style="background-color: white; border-bottom: 2px solid lightgray;">
+
+<body data-theme="light">
+    <nav class="nav" id="nav" style="background-color: white; border-bottom: 2px solid lightgray;">
 
         <header id="top">
             <div class="container-1">
@@ -50,15 +54,17 @@
                                 <li class="Home">
                                     <a href="/home">Home</a>
                                 </li>
-                                <li class="Nieuws">
-                                    <a href="/nieuws">Nieuws</a>
-                                </li>
                                 <li class="Weer">
                                     <a href="/weer">Weer</a>
                                 </li>
                                 <li class="Contact">
                                     <a href="#contact">Contact</a>
                                 </li>
+@if (isset(Auth::user()->is_admin) && Auth::user()->is_admin === 1)
+                                    <li class="Upload">
+                                        <a href="/upload">Upload</a>
+                                    </li>
+@endif
                             </ul>
                         </nav>
                     </div>
@@ -127,14 +133,14 @@
                     </div>
                 </div>
         </header>
-</nav>
+    </nav>
 
-{{ $slot }}
+    {{ $slot }}
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

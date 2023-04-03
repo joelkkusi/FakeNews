@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', fn() => redirect('/home'));
-Route::get('/home', [PostController::class, 'recent']);
+Route::get('/home', [PostController::class, 'all']);
+
+Route::resource("/upload", UploadController::class);
 
 Route::get('/nieuws', [PostController::class, 'all']);
 

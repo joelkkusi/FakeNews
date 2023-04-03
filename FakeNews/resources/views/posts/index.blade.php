@@ -16,18 +16,20 @@
                     @if ($loop->iteration <= 5)
                         <figure class="gallery-item">
                             <a href="#sleep">
-                                <img src="/images/sleepingfemale.jpg" alt="" class="item-image" />
+                                <img src="{{ asset($post->image->photo) }}" alt="" class="item-image" />
                             </a>
                             <figcaption class="item-description">
                                 <a href="#link2">
                                     <h2 class="name">{{ strlen($post->title) > 100 ? substr($post->title, 0, 100) . "..." : $post->title }}</h2>
                                 </a>
-                                {{-- Nieuwe studie toont aan dat regelmatige powernaps de productiviteit kunnen verhogen --}}
                                 <span class="role">Bron: {{ $post->user->name }}</span>
                             </figcaption>
                         </figure>
                     @endif
                 @endforeach
+
+                {{-- Nieuwe studie toont aan dat regelmatige powernaps de productiviteit kunnen verhogen --}}
+                {{-- <img src="/images/sleepingfemale.jpg" alt="" class="item-image" /> --}}
                 {{-- <figure class="gallery-item">
                     <a href="#sleep">
                         <img src="/images/olympischespelen.jpg" alt="" class="item-image" />
@@ -93,7 +95,7 @@
                 </ul>
             </div>
             <div class="button-container">
-                <button onclick="location.href='/nieuws'" class="button-24-2">Bekijk Meer</button>
+                <button onclick="location.href='/nieuws'" style="position: absolute;bottom: 10px;left: 12px;height: 40px;" class="button-24-2">Bekijk Meer</button>
             </div>
         </section>
     </div>
