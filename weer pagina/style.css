@@ -45,12 +45,12 @@ button {
     color: white;
     cursor: pointer;
         transition: 0.25 ease-in-out;
-    
+
   }
   button:hover {
     background: #7c7c7c6b;
   }
-  
+
   h1.temp {
     margin :0;
     margin-bottom: 0.4em;
