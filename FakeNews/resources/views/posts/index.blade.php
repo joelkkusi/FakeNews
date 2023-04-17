@@ -11,10 +11,10 @@
                     Hover met je muis over de afbeeldingen voor meer info
                 </span>
             </h2>
-            <div class="gallery-wrapper bg-white" data-aos="fade-down">
+            <div class="gallery-wrapper" data-aos="fade-down">
 
                 @if (count($posts) < 1)
-                    <p>Geen resultaten gevonden :/ </p>
+                    <p class="textColor">Geen resultaten gevonden :/ </p>
 
                 @else
 
@@ -132,7 +132,6 @@
                         {{-- <span id="box-1">
                             <p style="position: absolute;bottom: -9px;">Meer</p>
                         </span> --}}
-                        <i class="fa-solid arrow fa-arrow-down" style="position: relative;top: -29px;left: 79px;"></i>
                         </a>
                     </div>
 
