@@ -41,6 +41,11 @@ function darkTheme(icon, logo, text, container, inputField) {
   document.body.classList.add("dark-mode");
   document.body.style.backgroundColor = "#0a0b11";
   document.getElementById('nav').style.backgroundColor = "#0a0b11";
+  backColor2 = document.getElementsByClassName('back-color2');
+
+  for (var i = 0; i < backColor2.length; i++) {
+    backColor2[i].style.backgroundColor = "black";
+  }
 
   for (var i = 0; i < text.length; i++) {
     text[i].style.color = "white";
@@ -63,6 +68,11 @@ function lightTheme(icon, logo, text, container, inputField) {
   document.body.classList.remove("dark-mode");
   document.body.style.backgroundColor = "white";
   document.getElementById('nav').style.backgroundColor = "white";
+  backColor2 = document.getElementsByClassName('back-color2');
+
+  for (var i = 0; i < backColor2.length; i++) {
+    backColor2[i].style.backgroundColor = "white";
+  }
 
   for (var i = 0; i < text.length; i++) {
     text[i].style.color = "black";
@@ -90,7 +100,7 @@ function setCookie(name, value) {
 
 $(document).ready(function () {
   $("#search-btn").click(function (event) {
-    event.preventDefault(); // prevent the link from being followed
+    event.preventDefault();
     $(".main-menu-3").toggleClass("open");
     $(".search-bar").toggle();
   });
@@ -98,17 +108,16 @@ $(document).ready(function () {
 
 
 
-const searchBtn = document.getElementById("search-btn");
-const searchInput = document.querySelector(".search-bar input");
 
-searchBtn.addEventListener("click", function () {
-  const searchbar = document.querySelector(".search-bar");
-  if (searchbar.classList.contains("active")) {
-    searchbar.classList.remove("active");
-  } else {
-    searchbar.classList.add("active");
-    searchInput.focus();
-  }
+const searchSubmit = document.getElementById("search-submit");
+
+searchSubmit.addEventListener("click", function () {
+
+
+  const searchInput = document.querySelector(".search-bar input");
+
+  window.location.replace('/home?=');
+
 });
 
 
